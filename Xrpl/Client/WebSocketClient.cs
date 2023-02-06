@@ -57,7 +57,7 @@ namespace Xrpl.Client
             if (_ws == null)
             {
                 _ws = new ClientWebSocket();
-                _ws.Options.KeepAliveInterval = TimeSpan.FromSeconds(20);
+                //_ws.Options.KeepAliveInterval = TimeSpan.FromSeconds(20);
             }
 
             await ConnectAsync();

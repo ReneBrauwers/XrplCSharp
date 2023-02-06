@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <!-- <TargetFramework>netstandard2.0</TargetFramework> -->
@@ -11,9 +11,11 @@
     <Description>A C# library to interact with the XRP Ledger (XRPL) blockchain</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseUrl>https://github.com/Transia-RnD/XrplCSharp/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/Transia-RnD/XrplCSharp</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/ReneBrauwers/XrplCSharp</PackageProjectUrl>
     <Title>XrplCSharp</Title>
     <PackageVersion>2.0.0</PackageVersion>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/ReneBrauwers/XrplCSharp</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

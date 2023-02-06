@@ -4,6 +4,7 @@
 
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xrpl.Models.Methods;
 
 namespace XrplTests.Xrpl.ClientLib.Integration
 {
@@ -23,9 +24,23 @@ namespace XrplTests.Xrpl.ClientLib.Integration
         [TestMethod]
         public async Task TestRequestMethod()
         {
-            //AccountTxRequest request = new AccountTxRequest(runner.wallet.ClassicAddress) { Strict = true };
-            //AccountTx accountInfo = await runner.client.AccountTx(request);
-            //Assert.IsNotNull(accountInfo);
+            AccountTransactionsRequest request = new AccountTransactionsRequest(runner.wallet.ClassicAddress);
+            AccountTransactions accountInfo = await runner.client.AccountTransactions(request);
+            Assert.IsNotNull(accountInfo);
         }
+
+        [TestMethod]
+        public async Task TestRequestMethodSpecific()
+        {
+            AccountTransactionsRequest request = new AccountTransactionsRequest(runner.wallet.ClassicAddress)
+            {
+                Forward = false,
+                LedgerIndexMax = 120
+            };
+            AccountTransactions accountInfo = await runner.client.AccountTransactions(request);
+            Assert.IsNotNull(accountInfo);
+        }
+
+ 
     }
 }
