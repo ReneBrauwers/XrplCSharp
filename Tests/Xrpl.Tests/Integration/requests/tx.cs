@@ -41,6 +41,6 @@ namespace XrplTests.Xrpl.ClientLib.Integration
             TxRequest request1 = new TxRequest(hash);
             TransactionResponseCommon accountTx = await runner.client.Tx(request1);
             Assert.IsNotNull(accountTx);
-        }
+        }        
     }
 }
