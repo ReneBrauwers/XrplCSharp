@@ -91,6 +91,7 @@ namespace Xrpl.BinaryCodec.Enums
         public static readonly Uint16Field HookStateExecutionIndex = new Uint16Field(nameof(HookStateExecutionIndex), 19);
         public static readonly Uint16Field HookApiVersion = new Uint16Field(nameof(HookApiVersion), 20);
 
+        public static readonly Uint32Field NetworkID = new Uint32Field(nameof(NetworkID), 1); // must be included on any network with a Network ID of 1025 or greater; Ie Xahau
         public static readonly Uint32Field Flags = new Uint32Field(nameof(Flags), 2);
         public static readonly Uint32Field SourceTag = new Uint32Field(nameof(SourceTag), 3);
         public static readonly Uint32Field Sequence = new Uint32Field(nameof(Sequence), 4);
@@ -139,7 +140,7 @@ namespace Xrpl.BinaryCodec.Enums
         public static readonly Uint32Field BurnedTokens = new Uint32Field(nameof(BurnedTokens), 44);
         public static readonly Uint32Field HookStateCount = new Uint32Field(nameof(HookStateCount), 45);
         public static readonly Uint32Field EmitGeneration = new Uint32Field(nameof(EmitGeneration), 46);
-        public static readonly Uint32Field NetworkId = new Uint32Field(nameof(NetworkId), 47); // must be included on any network with a Network ID of 1025 or greater; Ie Xahau
+       
 
         public static readonly Uint64Field IndexNext = new Uint64Field(nameof(IndexNext), 1);
         public static readonly Uint64Field IndexPrevious = new Uint64Field(nameof(IndexPrevious), 2);

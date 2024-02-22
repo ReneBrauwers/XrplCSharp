@@ -13,7 +13,7 @@
     <PackageLicenseUrl>https://github.com/Transia-RnD/XrplCSharp/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/ReneBrauwers/XrplCSharp</PackageProjectUrl>
     <Title>XrplCSharp</Title>
-    <PackageVersion>2.0.0</PackageVersion>
+    <PackageVersion>2.0.1</PackageVersion>
     <RepositoryUrl>https://github.com/ReneBrauwers/XrplCSharp</RepositoryUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
