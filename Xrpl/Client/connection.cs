@@ -347,7 +347,7 @@ namespace Xrpl.Client
             try
             {
                 data = JsonConvert.DeserializeObject<BaseResponse>(message);
-                Console.WriteLine(message);
+                //Console.WriteLine(message); 
             }
             catch (Exception error)
             {

@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Xrpl.BinaryCodec;
+using Xrpl.Sugar;
 using Xrpl.Wallet;
 
 // https://github.com/XRPLF/xrpl.js/blob/main/packages/xrpl/test/wallet/signer.ts
@@ -185,6 +187,29 @@ namespace Xrpl.Tests.Wallet.Tests
             Dictionary<string, dynamic> decodedTx = XrplBinaryCodec.Decode(signedTx.TxBlob).ToObject<Dictionary<string, dynamic>>();
             decodedTx["SigningPubKey"] = "0330E7FC9D56BB25D6893BA3F317AE5BCF33B3291BD63DB32654A313222F7FD020";
             Assert.IsFalse(Signer.VerifySignature(decodedTx));
+        }
+
+        [TestMethod]
+        public async Task TestSignedTxIncludingNetworkIdNoAutoFill()
+        {
+
+            XrplWallet wallet = XrplWallet.Generate();
+            XrplWallet destinationWallet = XrplWallet.Generate();
+
+
+            Dictionary<string, dynamic> tx = new Dictionary<string, dynamic>
+        {
+                { "NetworkId",21337},
+            { "TransactionType", "Payment" },
+            { "Account", wallet.ClassicAddress },
+            { "Destination", destinationWallet.ClassicAddress },
+            { "Amount", "1000000" }
+
+        };
+
+            string signedTx = string.Empty;
+            signedTx = await SubmitSugar.GetSignedTx(null, tx, false, false, wallet);              
+            Assert.IsFalse(string.IsNullOrEmpty(signedTx));
         }
     }
 }

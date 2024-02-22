@@ -139,7 +139,8 @@ namespace Xrpl.BinaryCodec.Enums
         public static readonly Uint32Field BurnedTokens = new Uint32Field(nameof(BurnedTokens), 44);
         public static readonly Uint32Field HookStateCount = new Uint32Field(nameof(HookStateCount), 45);
         public static readonly Uint32Field EmitGeneration = new Uint32Field(nameof(EmitGeneration), 46);
-        
+        public static readonly Uint32Field NetworkId = new Uint32Field(nameof(NetworkId), 47); // must be included on any network with a Network ID of 1025 or greater; Ie Xahau
+
         public static readonly Uint64Field IndexNext = new Uint64Field(nameof(IndexNext), 1);
         public static readonly Uint64Field IndexPrevious = new Uint64Field(nameof(IndexPrevious), 2);
         public static readonly Uint64Field BookNode = new Uint64Field(nameof(BookNode), 3);
